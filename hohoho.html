@@ -1,0 +1,26 @@
+<html>
+<body>
+
+<form method="post" action="send.php">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message"></textarea><br>
+  <input type="submit" value="Submit">
+
+<?php
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+  $to = "azimkanovbaktiar@gmail.com";
+  $subject = "New Contact Form Submission";
+  $body = "New contact form submission: \nName: $name \nEmail: $email \nMessage: $message";
+  mail($to, $subject, $body);
+?>
+
+</form> 
+
+</body>
+</html>
